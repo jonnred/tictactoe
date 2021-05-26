@@ -1,62 +1,60 @@
-*{
-    box-sizing: border-box;
-    padding:0px;
-    margin: 0px;
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
 }
-body{
-    background-color: #ccc;
+body {
+  background-color: #ccc;
 }
-.player1{
-    width: 100px;
-    height: 10px;
-    background-color: red;
+.player1 {
+  width: 100px;
+  height: 10px;
+  background-color: red;
 }
-.ekis1{
-    transform: rotate(-45deg);
+.ekis1 {
+  transform: rotate(-45deg);
+}
+.ekis2 {
+  transform: rotate(45deg);
+}
+.player2 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 7px solid blue;
+}
+.player1-container,
+.player2-container {
+  width: 147px;
+  height: 147px;
 
-}
-.ekis2{
-    transform: rotate(45deg);
-}
-.player2{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: blue;
-}
-.player1-container , .player2-container{
-    width: 147px;
-    height: 147px;
-    background-color: rgba(210, 105, 30, 0.24);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.player1 , player2 {
-    position: absolute;
-    cursor: pointer;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.box{
-    background-color: white;
-    width: 150px;
-    height: 150px;
-    border: 2px solid whitesmoke;
-    cursor: pointer;
-}
-.box:hover{
-    background-color: whitesmoke;
-}
-.game-container{
-    background-color: blueviolet;
-}
-.box-container{
-    margin: 7% auto auto auto;
-    width: 450px;
-    display: grid;
-    grid-template-columns: auto auto auto;
+.player1,
+player2 {
+  position: absolute;
+  cursor: pointer;
 }
 
+.box {
+  background-color: white;
+  width: 150px;
+  height: 150px;
+  border: 2px solid whitesmoke;
+  cursor: pointer;
+}
+.box:hover {
+  background-color: whitesmoke;
+}
+.game-container {
+  background-color: blueviolet;
+}
+.box-container {
+  margin: 7% auto auto auto;
+  width: 450px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
