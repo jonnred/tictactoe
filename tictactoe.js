@@ -5,12 +5,15 @@ var player1answer = `<div class="player1-container">
 var player2answer = `<div class="player2-container">
                         <div class="player2 circle1"></div>
                     </div>`;
+let checkWinner = false;
 const endgame = () => {
   const restart = document.querySelector("#restart");
   restart.addEventListener("click", () => {
     player1 = [];
     player2 = [];
     counter = 0;
+    checkWinner = false;
+
     for (let i = 0; i < 9; i++) {
       if (
         box[i].contains(document.querySelector(".player1-container")) ||
@@ -65,10 +68,13 @@ const addingAnswerFunction = () => {
           console.log(`player2 : ${player2}`);
           CheckingWhoIsTheWinner(player2);
         } else if (counter == 8) {
-          addingAnswer.innerHTML = player1answer;
-
-          endGameBoard("", "draw");
-          // document.write("draw");
+          counter++;
+          addingAnswer.innerHTML = player2answer;
+          player2.push(index);
+          CheckingWhoIsTheWinner(player2);
+          if (checkWinner == false) {
+            endGameBoard("", "draw");
+          }
         } else {
           addingAnswer.innerHTML = player2answer;
           playerTurn.innerText = "PLAYER 2";
@@ -100,9 +106,13 @@ const CheckingWhoIsTheWinner = (player) => {
     // if it is equal to 3 it means all answers are correct
     if (count == 3) {
       if (counter % 2) {
+        checkWinner = true;
         endGameBoard("PLAYER 1", "WINNER: ");
+        console.log("player1 win");
       } else {
+        checkWinner = true;
         endGameBoard("PLAYER 2", "WINNER: ");
+        console.log("player2 win");
       }
     }
     //count equals to 0
