@@ -15,6 +15,9 @@ var answerKey = [
   [0, 3, 6],
   [1, 4, 7],
   [2, 5, 8],
+
+  [0, 4, 8],
+  [2, 4, 6],
 ];
 // counter: to know who's turn
 var counter = 0;
@@ -33,6 +36,8 @@ const addingAnswerFunction = () => {
           player2.push(index);
           console.log(`player2 : ${player2}`);
           CheckingWhoIsTheWinner(player2);
+        } else if (counter == 8) {
+          document.write("draw");
         } else {
           addingAnswer.innerHTML = player2answer;
           counter++;
@@ -50,10 +55,10 @@ const CheckingWhoIsTheWinner = (player) => {
     let count = 0;
     //////ANSWERKEY 1D ARRAY
     answerKey2d.forEach((answerKey1d) => {
-      console.log(answerKey1d);
+      // console.log(answerKey1d);
       //PLAYER1 ANSWER ARRAY
       player.forEach((player1Answer1d) => {
-        console.log("player1 answer 1d  ::" + player1Answer1d);
+        // console.log("player1 answer 1d  ::" + player1Answer1d);
         if (player1Answer1d == answerKey1d) {
           count++;
         }
